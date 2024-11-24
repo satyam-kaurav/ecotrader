@@ -64,7 +64,7 @@ const PrivateSaleLanding = () => {
 		<div className="text-white p-4 md:p-6">
 			<div className="max-w-7xl mx-auto">
 				{/* Header - Modified for mobile */}
-				<div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8 sm:mb-16">
+				<div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8 mt-8 sm:mt-auto sm:mb-16">
 					<div className="w-48 sm:w-60">
 						<Image
 							src="dark-logo.svg"
@@ -73,7 +73,7 @@ const PrivateSaleLanding = () => {
 							width="512"
 						/>
 					</div>
-					<button className="w-full sm:w-auto px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-background transition-all">
+					<button className="w-full hidden sm:block sm:w-auto px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-background transition-all">
 						Connect Wallet
 					</button>
 				</div>
@@ -83,7 +83,7 @@ const PrivateSaleLanding = () => {
 					{/* Left Side Content */}
 					<div className="space-y-6">
 						{/* Countdown Timer - Modified for mobile */}
-						<div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+						<div className="grid grid-cols-4 gap-3">
 							{[
 								{ value: timeLeft.days, label: "DAYS" },
 								{ value: timeLeft.hours, label: "HOURS" },
@@ -92,12 +92,12 @@ const PrivateSaleLanding = () => {
 							].map(({ value, label }) => (
 								<div
 									key={label}
-									className="bg-zinc-900 p-1 sm:py-8 rounded-lg text-center"
+									className="bg-zinc-900 p-4 sm:py-8 rounded-lg text-center"
 								>
 									<div className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2">
 										{value}
 									</div>
-									<div className="text-sm sm:text-md text-blue-400">
+									<div className="text-[10px] sm:text-[14px] text-blue-400">
 										{label}
 									</div>
 								</div>
@@ -106,7 +106,7 @@ const PrivateSaleLanding = () => {
 
 						{/* Waiting List Form - Modified for mobile */}
 						<div className="mt-8">
-							<h3 className="text-xl mb-4 mt-6 text-center sm:text-left">
+							<h3 className="text-xl mb-4 mt-12 sm:mt-6 text-center sm:text-left">
 								JOIN THE WAITING LIST
 							</h3>
 							<form
@@ -127,18 +127,23 @@ const PrivateSaleLanding = () => {
 								>
 									Join Waiting List
 								</button>
+								<button className="w-full sm:hidden sm:w-auto px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-background transition-all">
+									Connect Wallet
+								</button>
 							</form>
 						</div>
 					</div>
 
 					{/* Right Side Content - Modified for mobile */}
 					<div className="space-y-3 w-full mb-8 lg:mb-0">
-						<h1 className="text-4xl sm:text-7xl font-bold leading-tight text-center lg:text-right">
+						<h1 className="text-4xl mt-8 sm:mt-auto sm:text-8xl font-bold leading-tight text-center lg:text-right">
 							PRIVATE SALE
 							<br />
-							STARTING SOON!
+							<p className="text-2xl sm:text-7xl">
+								STARTING SOON!
+							</p>
 						</h1>
-						<p className="text-base sm:text-lg text-center lg:text-right">
+						<p className="text-sm sm:text-lg text-center lg:text-right">
 							The Renewable Energy Market is now available to
 							small investors. You can take an active part in the
 							Green Energy
