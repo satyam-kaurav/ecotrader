@@ -158,6 +158,13 @@ const PrivateSaleLanding = () => {
 						</div>
 					</div>
 				</div>
+				<Image
+					src="/mountains.jpg"
+					alt="Mountains graphic"
+					width="0"
+					height="0"
+					className="mx-auto w-[90%] max-h-80 my-16 rounded-xl"
+				/>
 			</div>
 		</div>
 	);

@@ -1,12 +1,14 @@
 import dynamic from "next/dynamic";
-const NoSSR = dynamic(() => import("../components/hero"), {
+const Hero = dynamic(() => import("../components/hero"), {
 	ssr: false,
 });
+import Plan from "../components/plan";
 
 export default function Home() {
 	return (
 		<div>
-			<NoSSR />
+			<Hero />
+			<Plan />
 		</div>
 	);
 }
