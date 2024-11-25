@@ -39,10 +39,9 @@ export default function Footer() {
 				<Image
 					src="/light-logo-removebg-preview.png" // Replace with your logo path
 					alt="Ecotrader Logo"
-					width={0}
-					height={300}
+					width={1000}
+					height={1000}
 					className="w-full max-w-md"
-					unoptimized={true}
 				/>
 			</div>
 

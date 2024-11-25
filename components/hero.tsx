@@ -64,16 +64,17 @@ const PrivateSaleLanding = () => {
 		<div className="text-white p-4 md:p-6">
 			<div className="max-w-7xl mx-auto">
 				{/* Header - Modified for mobile */}
-				<div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8 mt-8 sm:mt-auto sm:mb-16">
+				<div className="flex flex-row justify-between items-center gap-4 mb-8 mt-8 sm:mt-auto sm:mb-16">
 					<div className="w-48 sm:w-60">
 						<Image
 							src="dark-logo.svg"
 							alt="Ecotrader.io"
 							height="512"
 							width="512"
+							priority={true}
 						/>
 					</div>
-					<button className="w-full hidden sm:block sm:w-auto px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-background transition-all">
+					<button className="w-auto px-2 py-1 sm:px-4 sm:py-2 border border-white rounded-lg hover:bg-white hover:text-background transition-all text-xs sm:text-base">
 						Connect Wallet
 					</button>
 				</div>
@@ -162,10 +163,9 @@ const PrivateSaleLanding = () => {
 					<Image
 						src="/mountains.jpg"
 						alt="Mountains graphic"
-						height={0}
-						width={0}
+						height={384}
+						width={1000}
 						className="w-full max-h-96 object-cover rounded-xl"
-						unoptimized={true}
 					/>
 				</div>
 			</div>

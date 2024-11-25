@@ -11,10 +11,9 @@ const EnergyMapSection = () => {
 					<Image
 						src="/map.png"
 						alt="Energy Map"
-						height={0}
-						width={0}
+						height={1000}
+						width={1000}
 						className="w-full h-full object-cover"
-						unoptimized={true}
 					/>
 				</div>
 
