@@ -14,7 +14,7 @@ const EnergyMapSection = () => {
 						height={0}
 						width={0}
 						className="w-full h-full object-cover"
-						priority={true}
+						unoptimized={true}
 					/>
 				</div>
 
