@@ -42,7 +42,7 @@ export default function Footer() {
 					width={0}
 					height={300}
 					className="w-full max-w-md"
-					unoptimized={true}
+					priority={true}
 				/>
 			</div>
 

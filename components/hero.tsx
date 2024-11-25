@@ -165,7 +165,7 @@ const PrivateSaleLanding = () => {
 						height={0}
 						width={0}
 						className="w-full max-h-96 object-cover rounded-xl"
-						unoptimized={true}
+						priority={true}
 					/>
 				</div>
 			</div>
