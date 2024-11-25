@@ -80,7 +80,7 @@ const PrivateSaleLanding = () => {
 				</div>
 
 				{/* Main Content - Reordered for mobile */}
-				<div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8">
+				<div className="flex flex-col-reverse lg:grid lg:grid-cols-[40%_60%] gap-4">
 					{/* Left Side Content */}
 					<div className="space-y-6">
 						{/* Countdown Timer - Modified for mobile */}
@@ -107,7 +107,7 @@ const PrivateSaleLanding = () => {
 
 						{/* Waiting List Form - Modified for mobile */}
 						<div className="mt-8">
-							<h3 className="text-xl mb-4 mt-12 sm:mt-6 text-center sm:text-left">
+							<h3 className="text-xl mb-4 sm:mb-auto mt-12 sm:mt-6 text-center sm:text-left">
 								JOIN THE WAITING LIST
 							</h3>
 							<form
@@ -128,23 +128,20 @@ const PrivateSaleLanding = () => {
 								>
 									Join Waiting List
 								</button>
-								<button className="w-full sm:hidden sm:w-auto px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-background transition-all">
-									Connect Wallet
-								</button>
 							</form>
 						</div>
 					</div>
 
 					{/* Right Side Content - Modified for mobile */}
-					<div className="space-y-3 w-full mb-8 lg:mb-0">
-						<h1 className="text-4xl mt-8 sm:mt-auto sm:text-8xl font-bold leading-tight text-center lg:text-right">
-							PRIVATE SALE
+					<div className="space-y-5 w-full mb-8 lg:mb-0">
+						<h1 className="text-xl mt-8 sm:mt-6 sm:text-5xl font-bold tracking-tighter text-center lg:text-right uppercase">
+							EcoTrader&apos;s Real World Assets
 							<br />
-							<p className="text-2xl sm:text-7xl">
-								STARTING SOON!
+							<p className="text-xl sm:mt-2 sm:text-5xl tracking-tighter normal-case ">
+								- your door to the Energy Sector
 							</p>
 						</h1>
-						<p className="text-sm sm:text-lg text-center lg:text-right">
+						<p className="text-sm sm:text-lg text-center lg:text-right !sm:mt-8 max-w-xl lg:ml-auto">
 							The Renewable Energy Market is now available to
 							small investors. You can take an active part in the
 							Green Energy

@@ -7,25 +7,25 @@ const ValuesSection = () => {
 			icon: "🌍",
 			title: "SUSTAINABILITY",
 			description:
-				"We strive to create a lasting, positive environmental impact through the promotion, development, and integration of renewable energy sources.",
+				"We are committed to fostering a greener planet by actively advancing clean energy solutions and promoting practices that ensure environmental longevity.",
 		},
 		{
 			icon: "💡",
 			title: "INNOVATION",
 			description:
-				"We constantly explore and examine new technology that can improve our energy projects, driving efficiency and improving cost-effectiveness.",
+				"Driving the future with cutting-edge technology, we enhance efficiency and optimize renewable energy systems for sustainable progress.",
 		},
 		{
 			icon: "🤝",
 			title: "COLLABORATION",
 			description:
-				"We work closely with stakeholders, partners, and communities to ensure the successful execution of our renewable energy projects.",
+				"Partnering with stakeholders and communities, we align efforts to create impactful, scalable solutions in renewable energy projects.",
 		},
 		{
 			icon: "⚖️",
 			title: "INTEGRITY",
 			description:
-				"We uphold the highest ethical standards in our business practices, remaining transparent and accountable to our clients and partners.",
+				"Transparency and accountability define our actions, ensuring trust and ethical standards in every step of our journey toward a sustainable future.",
 		},
 	];
 

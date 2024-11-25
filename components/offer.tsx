@@ -6,25 +6,25 @@ const WhatWeOfferSection = () => {
 			number: "1",
 			title: "PROJECT DEVELOPMENT",
 			description:
-				"Our team of experts works closely with stakeholders to identify and assess potential renewable energy projects, providing comprehensive feasibility studies and due diligence services to ensure successful outcomes.",
+				"Ecotrader collaborates with stakeholders to identify and evaluate renewable energy projects, ensuring feasibility through detailed studies and expert analysis for impactful outcomes.",
 		},
 		{
 			number: "2",
 			title: "ENGINEERING, CONSTRUCTION",
 			description:
-				"Our end-to-end EPC solutions ensure that each project is designed, procured, and constructed to the highest standards of quality and efficiency, while adhering to environmental regulations and guidelines.",
+				"Providing comprehensive EPC services, Ecotrader delivers quality-assured projects adhering to environmental guidelines, from design to construction, ensuring sustainability and efficiency.",
 		},
 		{
 			number: "3",
 			title: "OPERATIONS, MAINTENANCE",
 			description:
-				"We offer a complete and comprehensive solution to our partners and investors, managing all aspects of development & construction and maintaining the project once it's up and running.",
+				"Ecotrader ensures seamless project management by offering end-to-end operational solutions, maintaining infrastructure, and optimizing performance for long-term success.",
 		},
 		{
 			number: "4",
 			title: "POWER SALE & PPA'S",
 			description:
-				"Our trade center offers an array of options for short, medium, and long-term power purchases, our team works to adjust the allocation of quotas considering updated market status.",
+				"Facilitating flexible power purchase agreements, Ecotrader supports short and long-term energy trading, adapting to market needs and advancing clean energy access.",
 		},
 	];
 

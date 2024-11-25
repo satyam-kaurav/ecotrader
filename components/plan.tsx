@@ -7,42 +7,42 @@ const EnergyPlanSection = () => {
 			icon: "☀️",
 			title: "SOLAR FIELDS",
 			description:
-				"Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh ornare viverra. Ultricies faucibus neque velit risus ac id lorem.",
+				"Harness the power of the sun to drive clean energy solutions. Our solar initiatives focus on large-scale photovoltaic installations to provide affordable, sustainable power globally.",
 			phase: 1,
 		},
 		{
 			icon: "H₂",
 			title: "GREEN HYDROGEN",
 			description:
-				"Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh ornare viverra. Ultricies faucibus neque velit risus ac id lorem.",
+				"Leading the transition to a hydrogen-powered future. By producing green hydrogen through renewable energy, we enable clean fuel alternatives for industries and transportation.",
 			phase: 1,
 		},
 		{
 			icon: "⚡",
 			title: "ENERGY STORAGE",
 			description:
-				"Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh ornare viverra. Ultricies faucibus neque velit risus ac id lorem.",
+				"Empowering energy independence with advanced storage solutions. We integrate battery systems to ensure a reliable, uninterrupted supply of renewable power anytime, anywhere.",
 			phase: 1,
 		},
 		{
 			icon: "🌪️",
 			title: "WIND TURBINES",
 			description:
-				"Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh ornare viverra. Ultricies faucibus neque velit risus ac id lorem.",
+				"We utilize wind farms to maximize efficiency and deliver renewable energy to communities worldwide.",
 			phase: 2,
 		},
 		{
 			icon: "♻️",
 			title: "WASTE TO ENERGY",
 			description:
-				"Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh ornare viverra. Ultricies faucibus neque velit risus ac id lorem.",
+				"Transforming waste into a sustainable resource. Our projects convert organic and industrial waste into clean energy, reducing landfill reliance and greenhouse emissions.",
 			phase: 2,
 		},
 		{
 			icon: "🔥",
 			title: "BIO-GAS TURBINES",
 			description:
-				"Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh ornare viverra. Ultricies faucibus neque velit risus ac id lorem.",
+				"Pioneering bio-energy by capturing methane and biogas. These turbines convert organic matter into renewable power, supporting sustainable energy transitions for industries and homes.",
 			phase: 2,
 		},
 	];
@@ -54,9 +54,12 @@ const EnergyPlanSection = () => {
 					Our Plan
 				</h2>
 				<p className="text-center mb-12 max-w-3xl mx-auto opacity-60">
-					Risus commodo id odio turpis pharetra elementum. Pulvinar
-					porta porta feugiat scelerisque in elit. Morbi rhoncus,
-					tellus, eros consequat magna semper orci a tincidunt.
+					Earn passive income and make a positive impact on the Earth
+					- it&apos;s that simple Simplifies renewable energy
+					investments through blockchain, promoting transparency and
+					sustainability. By tokenizing projects, we empower
+					communities to support green energy initiatives and fight
+					climate change effectively
 				</p>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
