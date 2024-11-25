@@ -50,13 +50,13 @@ const EnergyPlanSection = () => {
 	return (
 		<section className="w-full py-12 relative">
 			<div className="container mx-auto max-w-7xl px-4">
-				<h2 className="text-4xl font-bold text-center mb-4">
+				{/* <h2 className="text-4xl font-bold text-center mb-4">
 					Our Plan
-				</h2>
-				<p className="text-center mb-12 max-w-3xl mx-auto opacity-60">
+				</h2> */}
+				<p className="text-center mb-12 max-w-4xl text-xl font-bold mx-auto opacity-75">
 					Earn passive income and make a positive impact on the Earth
-					- it&apos;s that simple Simplifies renewable energy
-					investments through blockchain, promoting transparency and
+					- it&apos;s that simple Renewable energy investments made
+					possible through blockchain, promoting transparency and
 					sustainability. By tokenizing projects, we empower
 					communities to support green energy initiatives and fight
 					climate change effectively

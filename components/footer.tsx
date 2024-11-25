@@ -9,9 +9,9 @@ type SocialMediaLinks = {
 };
 
 const socialMediaLinks: SocialMediaLinks = {
-	discord: {
-		url: "https://discord.com/invite/cvSFXP7H9q",
-		icon: "/socials/discord.png",
+	telegram: {
+		url: "https://t.me/TheEcoTrader",
+		icon: "/socials/telegram.svg",
 	},
 	linkedin: {
 		url: "https://www.linkedin.com/company/ecotrader/?viewAsMember=true",
@@ -35,13 +35,13 @@ export default function Footer() {
 	return (
 		<footer className="bg-primary text-background text-center py-6 mt-12">
 			{/* Top Section: Logo */}
-			<div className="flex flex-col items-center mb-4">
+			<div className="flex flex-col items-center mb-4 mt-4">
 				<Image
 					src="/light-logo-removebg-preview.png" // Replace with your logo path
 					alt="Ecotrader Logo"
 					width={1000}
 					height={1000}
-					className="w-full max-w-md"
+					className="w-full max-w-md mx-12"
 				/>
 			</div>
 

@@ -36,12 +36,10 @@ const ValuesSection = () => {
 					<h2 className="text-4xl font-bold text-center mb-4">
 						Our Values
 					</h2>
-					<p className="text-center max-w-3xl mx-auto opacity-60">
-						Risus commodo id odio turpis pharetra elementum.
-						Pulvinar porta porta feugiat scelerisque in elit. Morbi
-						rhoncus, tellus, eros consequat magna semper orci a
-						tincidunt.
-					</p>
+					{/* <p className="text-center max-w-3xl mx-auto opacity-60">
+						Discover the core principles that guide our mission and
+						shape our commitment to sustainable energy solutions.
+					</p> */}
 				</div>
 
 				<div className="relative">

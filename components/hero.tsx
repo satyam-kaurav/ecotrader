@@ -107,8 +107,11 @@ const PrivateSaleLanding = () => {
 
 						{/* Waiting List Form - Modified for mobile */}
 						<div className="mt-8">
-							<h3 className="text-xl mb-4 sm:mb-auto mt-12 sm:mt-6 text-center sm:text-left">
-								JOIN THE WAITING LIST
+							<h3 className="text-lg mb-4 mt-12 sm:mt-6 text-center sm:text-left">
+								PRIVATE SALE LAUNCHING SOON!{" "}
+								<span className="text-red-500">
+									JOIN THE WAITING LIST
+								</span>
 							</h3>
 							<form
 								onSubmit={handleSubmit}
@@ -126,7 +129,7 @@ const PrivateSaleLanding = () => {
 									type="submit"
 									className="px-6 py-2 bg-primary text-background rounded-lg hover:bg-white hover:text-black transition-all"
 								>
-									Join Waiting List
+									Join Now
 								</button>
 							</form>
 						</div>
@@ -134,11 +137,12 @@ const PrivateSaleLanding = () => {
 
 					{/* Right Side Content - Modified for mobile */}
 					<div className="space-y-5 w-full mb-8 lg:mb-0">
-						<h1 className="text-xl mt-8 sm:mt-6 sm:text-5xl font-bold tracking-tighter text-center lg:text-right uppercase">
+						<h1 className="text-xl mt-8 sm:mt-6 sm:text-5xl font-bold tracking-tighter text-center lg:text-right">
 							EcoTrader&apos;s Real World Assets
 							<br />
-							<p className="text-xl sm:mt-2 sm:text-5xl tracking-tighter normal-case ">
-								- your door to the Energy Sector
+							<p className="text-xl sm:mt-2 sm:text-5xl tracking-tighter normal-case">
+								Your door to the{" "}
+								<span className="italic">Energy Sector</span>
 							</p>
 						</h1>
 						<p className="text-sm sm:text-lg text-center lg:text-right !sm:mt-8 max-w-xl lg:ml-auto">
@@ -146,6 +150,15 @@ const PrivateSaleLanding = () => {
 							small investors. You can take an active part in the
 							Green Energy
 						</p>
+						<div className="mx-auto w-[90%] max-h-96 my-16 rounded-xl">
+							<Image
+								src="/mountains.jpg"
+								alt="Mountains graphic"
+								height={384}
+								width={1000}
+								className="w-full max-h-96 object-cover rounded-xl sm:hidden"
+							/>
+						</div>
 						<div className="hidden sm:flex justify-center lg:justify-end absolute right-0 top-0 -z-10">
 							<Image
 								src="section-1.svg"
@@ -162,7 +175,7 @@ const PrivateSaleLanding = () => {
 						alt="Mountains graphic"
 						height={384}
 						width={1000}
-						className="w-full max-h-96 object-cover rounded-xl"
+						className="w-full max-h-96 object-cover rounded-xl hidden sm:block"
 					/>
 				</div>
 			</div>
