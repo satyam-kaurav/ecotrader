@@ -1,69 +1,72 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useCountdownTimer } from "./timer";
+
+const SALE_END_DATE = "2023-11-30T00:00:00";
 
 const PrivateSaleLanding = () => {
-	const SALE_END_DATE = "2024-11-30T00:00:00";
-
-	const calculateTimeLeft = () => {
-		const targetDate = new Date(SALE_END_DATE);
-		const now = new Date();
-		const difference = targetDate.getTime() - now.getTime();
-
-		if (difference <= 0) {
-			return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-		}
-
-		return {
-			days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-			hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-			minutes: Math.floor((difference / 1000 / 60) % 60),
-			seconds: Math.floor((difference / 1000) % 60),
-		};
-	};
-
-	const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 	const [email, setEmail] = useState("");
+	const [emailError, setEmailError] = useState("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
-	useEffect(() => {
-		const timer = setInterval(() => {
-			setTimeLeft((prev) => {
-				if (prev.seconds > 0) {
-					return { ...prev, seconds: prev.seconds - 1 };
-				} else if (prev.minutes > 0) {
-					return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-				} else if (prev.hours > 0) {
-					return {
-						...prev,
-						hours: prev.hours - 1,
-						minutes: 59,
-						seconds: 59,
-					};
-				} else if (prev.days > 0) {
-					return {
-						...prev,
-						days: prev.days - 1,
-						hours: 23,
-						minutes: 59,
-						seconds: 59,
-					};
-				}
-				return prev;
-			});
-		}, 1000);
+	// Use the custom hook for timer logic
+	const { timeLeft, isTimerExpired } = useCountdownTimer(SALE_END_DATE);
 
-		return () => clearInterval(timer);
-	}, []);
-
-	const handleSubmit = (e: { preventDefault: () => void }) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		console.log("Email submitted:", email);
+		setIsSubmitting(true);
+		setEmailError("");
+
+		try {
+			// Check if email already exists in the waitlist
+			const response = await fetch("/api/check-waitlist", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ email }),
+			});
+
+			const result = await response.json();
+
+			if (result.exists) {
+				// Email already in waitlist
+				setEmailError("This email is already on the waitlist.");
+				setIsSubmitting(false);
+				return;
+			}
+
+			// If not exists, add to waitlist
+			const addResponse = await fetch("/api/add-to-waitlist", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ email }),
+			});
+
+			const addResult = await addResponse.json();
+
+			if (addResult.success) {
+				// Clear email and show success message
+				setEmail("");
+				setEmailError("Successfully added to the waitlist!");
+			} else {
+				setEmailError("Failed to add to waitlist. Please try again.");
+			}
+		} catch (error) {
+			setEmailError("An error occurred. Please try again.");
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (
 		<div className="text-white p-4 md:p-6">
 			<div className="max-w-7xl mx-auto">
-				{/* Header - Modified for mobile */}
+				{/* Header */}
 				<div className="flex flex-row justify-between items-center gap-4 mb-8 mt-8 sm:mt-auto sm:mb-16">
 					<div className="w-48 sm:w-60">
 						<Image
@@ -79,40 +82,65 @@ const PrivateSaleLanding = () => {
 					</button>
 				</div>
 
-				{/* Main Content - Reordered for mobile */}
-				<div className="flex flex-col-reverse lg:grid lg:grid-cols-[40%_60%] gap-4">
+				{/* Main Content */}
+				<div
+					className={`flex flex-col-reverse lg:grid gap-4 ${
+						isTimerExpired
+							? "lg:grid-cols-[30%_70%]"
+							: "lg:grid-cols-[40%_60%]"
+					}`}
+				>
 					{/* Left Side Content */}
 					<div className="space-y-6">
-						{/* Countdown Timer - Modified for mobile */}
-						<div className="grid grid-cols-4 gap-3">
-							{[
-								{ value: timeLeft.days, label: "DAYS" },
-								{ value: timeLeft.hours, label: "HOURS" },
-								{ value: timeLeft.minutes, label: "MINUTES" },
-								{ value: timeLeft.seconds, label: "SECONDS" },
-							].map(({ value, label }) => (
-								<div
-									key={label}
-									className="bg-zinc-900 p-4 sm:py-8 rounded-lg text-center"
-								>
-									<div className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2">
-										{value}
+						{!isTimerExpired && (
+							<div className="grid grid-cols-4 gap-3">
+								{[
+									{ value: timeLeft.days, label: "DAYS" },
+									{ value: timeLeft.hours, label: "HOURS" },
+									{
+										value: timeLeft.minutes,
+										label: "MINUTES",
+									},
+									{
+										value: timeLeft.seconds,
+										label: "SECONDS",
+									},
+								].map(({ value, label }) => (
+									<div
+										key={label}
+										className="bg-zinc-900 p-4 sm:py-8 rounded-lg text-center"
+									>
+										<div className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2">
+											{value}
+										</div>
+										<div className="text-[10px] sm:text-[14px] text-blue-400">
+											{label}
+										</div>
 									</div>
-									<div className="text-[10px] sm:text-[14px] text-blue-400">
-										{label}
-									</div>
-								</div>
-							))}
-						</div>
+								))}
+							</div>
+						)}
 
-						{/* Waiting List Form - Modified for mobile */}
+						{/* Waiting List Form */}
 						<div className="mt-8">
-							<h3 className="text-lg mb-4 mt-12 sm:mt-6 text-center sm:text-left">
-								PRIVATE SALE LAUNCHING SOON!{" "}
+							<div
+								className={`text-center justify-center sm:justify-start flex flex-wrap gap-x-2 w-dvw sm:w-full ${
+									isTimerExpired
+										? "text-3xl -mt-8 mb-4 sm:text-8xl tracking-tighter"
+										: "text-lg mb-4 mt-12 sm:mt-6"
+								}`}
+							>
+								<h3>
+									{isTimerExpired
+										? "JOIN THE"
+										: "PRIVATE SALE LAUNCHING SOON!"}{" "}
+								</h3>
 								<span className="text-red-500">
-									JOIN THE WAITING LIST
+									{isTimerExpired
+										? "PRESALE"
+										: "JOIN THE WAITING LIST"}{" "}
 								</span>
-							</h3>
+							</div>
 							<form
 								onSubmit={handleSubmit}
 								className="flex flex-col sm:flex-row gap-4"
@@ -127,15 +155,23 @@ const PrivateSaleLanding = () => {
 								/>
 								<button
 									type="submit"
-									className="px-6 py-2 bg-primary text-background rounded-lg hover:bg-white hover:text-black transition-all"
+									disabled={isSubmitting}
+									className="px-6 py-2 bg-primary text-background rounded-lg hover:bg-white hover:text-black transition-all disabled:opacity-50"
 								>
-									Join Now
+									{isSubmitting
+										? "Submitting..."
+										: "Subscribe"}
 								</button>
 							</form>
+							{emailError && (
+								<div className="mt-4 text-center animate-bounce text-primary">
+									{emailError}
+								</div>
+							)}
 						</div>
 					</div>
 
-					{/* Right Side Content - Modified for mobile */}
+					{/* Rest of the existing component remains the same */}
 					<div className="space-y-5 w-full mb-8 lg:mb-0">
 						<h1 className="text-xl mt-8 sm:mt-6 sm:text-5xl font-bold tracking-tighter text-center lg:text-right">
 							EcoTrader&apos;s Real World Assets
