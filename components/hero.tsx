@@ -77,9 +77,9 @@ const PrivateSaleLanding = () => {
 							priority={true}
 						/>
 					</div>
-					<button className="w-auto px-2 py-1 sm:px-4 sm:py-2 border border-white rounded-lg hover:bg-white hover:text-background transition-all text-xs sm:text-base">
+					{/* <button className="w-auto px-2 py-1 sm:px-4 sm:py-2 border border-white rounded-lg hover:bg-white hover:text-background transition-all text-xs sm:text-base">
 						Connect Wallet
-					</button>
+					</button> */}
 				</div>
 
 				{/* Main Content */}
